@@ -1,48 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>All About JSP</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            max-width: 800px;
-            width: 90%;
-            text-align: left;
-        }
-        h1 {
-            color: #3498db;
-        }
-        p {
-            line-height: 1.6;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .code {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 4px;
-            font-size: 14px;
-            margin-top: 10px;
-            overflow-x: auto;
-        }
-    </style>
-</head>
-<body>
+    <%@ include file="header.jsp" %>
     <div class="container">
         <h1>All About JSP</h1>
 
