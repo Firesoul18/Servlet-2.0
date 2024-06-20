@@ -1,28 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
-  <display-name>Servlet App</display-name>
-  
-  
-  <servlet>
-  	<servlet-name>add</servlet-name>
-  	<servlet-class>com.yogesh.AddServlet</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-  	<servlet-name>add</servlet-name>
-  	<url-pattern>/add</url-pattern>
-  </servlet-mapping>
-  
-  
-  
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-  </welcome-file-list>
-  
-    
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+	id="WebApp_ID" version="5.0">
+
+
+	<display-name>Servlet App</display-name>
+	<small-icon>apple.png</small-icon>
+	<large-icon>apple.png</large-icon>
+
+	<!-- these values are accessible by all servlet. Like global values -->
+	<context-param>
+		<param-name>namre</param-name>
+		<param-value>I_Dont Know</param-value>
+	</context-param>
+	
+	 <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/error.jsp</location>
+    </error-page>
+
+
+	<servlet>
+		<servlet-name>add</servlet-name>
+		<servlet-class>com.yogesh.AddServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>printer</servlet-name>
+		<servlet-class>com.yogesh.PrinterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>add</servlet-name>
+		<url-pattern>/add</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>printer</servlet-name>
+		<url-pattern>/printer</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>AllAboutJsp.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<display-name>RedirectServlet</display-name>
+		<servlet-name>RedirectServlet</servlet-name>
+		<servlet-class>com.yogesh.RedirectServlet</servlet-class>
+
+		<!-- these values are servlet specific constants. Like local values -->
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>I_Know</param-value>
+		</init-param>
+
+
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RedirectServlet</servlet-name>
+		<url-pattern>/redirect</url-pattern>
+	</servlet-mapping>
+
+
 </web-app>
